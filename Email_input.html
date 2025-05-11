@@ -61,17 +61,17 @@
   <div class="card">
     <h2>Enter Your Email</h2>
     <p>License key will be sent to your email automatically after payment is completed.</p>
-    <form action="https://formspree.io/f/xrbqlqqd" method="POST" onsubmit="redirectToPayment()">
+    <form action="https://formspree.io/f/xrbqlqqd" method="POST" onsubmit="redirectToPlan()">
       <input type="email" name="email" placeholder="Enter your email" required />
       <button type="submit">Continue</button>
     </form>
   </div>
 
   <script>
-    function redirectToPayment() {
+    function redirectToPlan() {
       setTimeout(function () {
-        window.location.href = "payment.html"; // Replace with your actual payment page
-      }, 500); // slight delay after submission
+        window.location.href = "plan_select.html";
+      }, 500);
     }
   </script>
 </body>
