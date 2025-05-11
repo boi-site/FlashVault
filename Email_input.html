@@ -61,18 +61,33 @@
   <div class="card">
     <h2>Enter Your Email</h2>
     <p>License key will be sent to your email automatically after payment is completed.</p>
-    <form action="https://formspree.io/f/xrbqlqqd" method="POST" onsubmit="redirectToPlan()">
+    <form id="emailForm">
       <input type="email" name="email" placeholder="Enter your email" required />
       <button type="submit">Continue</button>
     </form>
   </div>
 
   <script>
-    function redirectToPlan() {
-      setTimeout(function () {
-        window.location.href = "plan_select.html";
-      }, 500);
-    }
+    document.getElementById("emailForm").addEventListener("submit", function (e) {
+      e.preventDefault(); // Stop form from redirecting
+      const formData = new FormData(this);
+      fetch("https://formspree.io/f/xrbqlqqd", {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json"
+        }
+      }).then(response => {
+        if (response.ok) {
+          window.location.href = "plan_select.html"; // redirect after success
+        } else {
+          alert("Error submitting form.");
+        }
+      }).catch(() => {
+        alert("Network error.");
+      });
+    });
   </script>
 </body>
 </html>
+
