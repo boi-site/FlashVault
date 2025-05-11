@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Enter Your Email</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #000;
+      font-family: 'Courier New', monospace;
+      color: #00ff88;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .card {
+      background-color: #111;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 20px #00cc66;
+      text-align: center;
+      width: 90%;
+      max-width: 400px;
+    }
+    h2 {
+      color: #00ff88;
+      margin-bottom: 1rem;
+      font-size: 1.6rem;
+    }
+    p {
+      color: #ccc;
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+    input[type="email"] {
+      width: 100%;
+      padding: 12px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      background-color: #222;
+      color: #eee;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      font-size: 1rem;
+      background-color: #00cc66;
+      color: #000;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>Enter Your Email</h2>
+    <p>License key will be sent to your email automatically after payment is completed.</p>
+    <form action="https://formspree.io/f/xrbqlqqd" method="POST" onsubmit="redirectToPayment()">
+      <input type="email" name="email" placeholder="Enter your email" required />
+      <button type="submit">Continue</button>
+    </form>
+  </div>
+
+  <script>
+    function redirectToPayment() {
+      setTimeout(function () {
+        window.location.href = "payment.html"; // Replace with your actual payment page
+      }, 500); // slight delay after submission
+    }
+  </script>
+</body>
+</html>

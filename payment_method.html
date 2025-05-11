@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Select Payment Method</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #00ff88;
+      font-family: 'Courier New', monospace;
+      padding: 2rem;
+      text-align: center;
+    }
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .methods {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+    .method {
+      border: 1px solid #00ff88;
+      padding: 1rem;
+      border-radius: 6px;
+      text-decoration: none;
+      color: #00ff88;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+    .method:hover {
+      background-color: #003322;
+      transition: 0.3s;
+    }
+  </style>
+</head>
+<body>
+  <h2>Select Payment Method</h2>
+  <div class="methods">
+    <a href="btc_payment.html" class="method">Bitcoin (BTC)</a>
+    <a href="eth_payment.html" class="method">Ethereum (ETH)</a>
+    <a href="trc20_payment.html" class="method">USDT - TRC20</a>
+    <a href="bep20_payment.html" class="method">USDT - BEP20</a>
+    <a href="erc20_payment.html" class="method">USDT - ERC20</a>
+  </div>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Select Network</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #00ff88;
+      font-family: 'Courier New', monospace;
+      padding: 2rem;
+    }
+    h2 {
+      text-align: center;
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      white-space: nowrap;
+    }
+    .network-box {
+      border: 1px solid #00ff88;
+      padding: 0.3rem 0.8rem;
+      margin-bottom: 1.5rem;
+      border-radius: 6px;
+    }
+    .network-toggle {
+      background: none;
+      border: none;
+      color: #00ff88;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.4rem 0;
+      width: 100%;
+    }
+    .arrow {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      border-right: 2px solid #00ff88;
+      border-bottom: 2px solid #00ff88;
+      transform: rotate(45deg);
+      transition: transform 0.3s ease;
+    }
+    .arrow.open {
+      transform: rotate(-45deg);
+    }
+    .token-list {
+      display: none;
+      flex-direction: column;
+      margin-top: 0.8rem;
+    }
+    .token-item {
+      color: #00ff88;
+      padding: 0.3rem 0;
+      border-bottom: 1px solid #00ff88;
+      text-align: left;
+      text-decoration: none;
+    }
+    .token-item:last-child {
+      border-bottom: none;
+    }
+  </style>
+</head>
+<body>
+  <h2>Select a Network</h2>
+
+  <div class="network-box">
+    <button class="network-toggle" onclick="toggleList('erc')">
+      ERC20 <span class="arrow" id="arrow-erc"></span>
+    </button>
+    <div class="token-list" id="erc">
+      <a href="payment-method.html" class="token-item">USDT [Tether]</a>
+      <a href="payment-method.html" class="token-item">BTC [Bitcoin]</a>
+      <a href="payment-method.html" class="token-item">USDC [USD Coin]</a>
+      <a href="payment-method.html" class="token-item">ETH [Ethereum]</a>
+    </div>
+  </div>
+
+  <div class="network-box">
+    <button class="network-toggle" onclick="toggleList('bep')">
+      BEP20 <span class="arrow" id="arrow-bep"></span>
+    </button>
+    <div class="token-list" id="bep">
+      <a href="payment-method.html" class="token-item">USDT [Tether]</a>
+      <a href="payment-method.html" class="token-item">BTC [Bitcoin]</a>
+      <a href="payment-method.html" class="token-item">USDC [USD Coin]</a>
+      <a href="payment-method.html" class="token-item">ETH [Ethereum]</a>
+    </div>
+  </div>
+
+  <div class="network-box">
+    <button class="network-toggle" onclick="toggleList('trc')">
+      TRC20 <span class="arrow" id="arrow-trc"></span>
+    </button>
+    <div class="token-list" id="trc">
+      <a href="payment-method.html" class="token-item">USDT [Tether]</a>
+      <a href="payment-method.html" class="token-item">BTC [Bitcoin]</a>
+      <a href="payment-method.html" class="token-item">USDC [USD Coin]</a>
+      <a href="payment-method.html" class="token-item">ETH [Ethereum]</a>
+    </div>
+  </div>
+
+  <script>
+    function toggleList(id) {
+      const list = document.getElementById(id);
+      const arrow = document.getElementById(`arrow-${id}`);
+      const isVisible = list.style.display === "flex";
+      list.style.display = isVisible ? "none" : "flex";
+      arrow.classList.toggle("open", !isVisible);
+    }
+  </script>
+</body>
+</html>
