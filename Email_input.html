@@ -61,32 +61,21 @@
   <div class="card">
     <h2>Enter Your Email</h2>
     <p>License key will be sent to your email automatically after payment is completed.</p>
-    <form id="emailForm">
+    <form action="https://formsubmit.co/okorohgeorge@gmail.com" method="POST" onsubmit="redirectToPlan()">
+      <input type="hidden" name="_captcha" value="false">
       <input type="email" name="email" placeholder="Enter your email" required />
       <button type="submit">Continue</button>
     </form>
   </div>
 
   <script>
-    const form = document.getElementById("emailForm");
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      const formData = new FormData(form);
-      fetch("https://formspree.io/f/xrbqlqqd", {
-        method: "POST",
-        body: formData,
-        headers: { Accept: "application/json" }
-      }).then(res => {
-        if (res.ok) {
-          window.location.href = "plan_select.html";
-        } else {
-          alert("Form submission failed.");
-        }
-      }).catch(() => {
-        alert("Network error. Please try again.");
-      });
-    });
+    function redirectToPlan() {
+      setTimeout(function () {
+        window.location.href = "plan_select.html";
+      }, 500);
+    }
   </script>
 </body>
 </html>
+
 
