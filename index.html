@@ -146,8 +146,8 @@
     <img src="preview.jpg" alt="FlashVault Preview" class="preview-img" />
 
     <div class="license-wrapper">
-      <input type="text" placeholder="Input License Key" class="license-input" />
-      <button class="enter-btn" onclick="location.href='flash.html'">ENTER</button>
+      <input type="text" placeholder="Input License Key" class="license-input" id="licenseKey" />
+      <button class="enter-btn" onclick="showError()">ENTER</button>
     </div>
 
     <p class="license-note">Need a license?</p>
@@ -162,6 +162,11 @@
 
     <a href="https://wa.me/18739100804" target="_blank" class="support-btn">Contact Support</a>
   </div>
+
+  <script>
+    function showError() {
+      alert("Invalid license key. Please check and try again.");
+    }
+  </script>
 </body>
 </html>
-
