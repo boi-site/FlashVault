@@ -1,11 +1,12 @@
 {
   "name": "FlashVault",
   "short_name": "FlashVault",
-  "start_url": "./index.html",
+  "description": "Instant flash token sender with license activation.",
+  "id": "/",
+  "start_url": "index.html",
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#00ff88",
-  "orientation": "portrait",
   "icons": [
     {
       "src": "icon-192.png",
@@ -16,6 +17,16 @@
       "src": "icon-512.png",
       "sizes": "512x512",
       "type": "image/png"
+    }
+  ],
+  "launch_handler": {
+    "client_mode": "auto"
+  },
+  "screenshots": [
+    {
+      "src": "preview.jpg",
+      "sizes": "600x800",
+      "type": "image/jpeg"
     }
   ]
 }
